@@ -2,11 +2,13 @@
 var SongQueueView = Backbone.View.extend({
 
   initialize: function() {
+    this.collection.on('add', this.render, this);
   },
 
   render: function() {
-  initialize: function() {
-  },
+    this.collection.forEach(function(model) {
+      new SongQueueEntryView(model).render();
+    });
   }
 
 });
