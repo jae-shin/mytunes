@@ -7,11 +7,10 @@ var PlayerView = Backbone.View.extend({
 
   initialize: function() {
     /*trigger a ended in the song queue from playerView*/
-    this.model.on('ended', function(e) {
-      console.log('dequeueing ', e);
-      e.ended();
-      //e.dequeue();
-    }, this);
+    var that = this;
+    this.$el.on('ended', function() {
+      that.model.ended();
+    });
   },
 
   setSong: function(song) {
