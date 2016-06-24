@@ -33,7 +33,18 @@
 
         // put the view onto the screen
         $('body').append(appView.render());
+
+        $('button').on('click', function() {
+          var newLib = new Songs({data: {where: {'title': {'$regex': '.*' + $('.userInput').val() + '.*'}}}})
+          // filter the library
+        })
       });
     </script>
+
+    <div>
+      <input class='userInput' type='text'>
+      <button>Submit</button>
+    </div>
+
   </body>
 </html>
