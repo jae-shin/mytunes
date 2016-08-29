@@ -2,6 +2,9 @@
 var AppModel = Backbone.Model.extend({
 
   initialize: function(params) {
+    // params = {library: library (Songs collection)}
+    // this sets a library property as the library songs collection
+
     this.set('currentSong', new SongModel());
     this.set('songQueue', new SongQueue());
 
